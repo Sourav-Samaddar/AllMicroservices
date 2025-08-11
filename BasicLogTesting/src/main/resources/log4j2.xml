@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration monitorInterval="5" status="warn">
+  <Properties>
+    <Property name="LOG_PATTERN">%d{ISO8601} [%t] %-5level %logger{36} - %msg%n</Property>
+    <Property name="APP_LOG_ROOT">./logs</Property>
+  </Properties>
+  <Appenders>
+    <Console follow="true" name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+    </Console>
+    <RollingFile name="appLog"
+    			 fileName="${APP_LOG_ROOT}/appserver.log" 
+    			 filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="19500KB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="1"/>
+    </RollingFile>
+    
+    <!-- Central Shared File Appender -->
+    <RollingFile name="SharedFile"
+                 fileName="C:/Users/1021861/Downloads/AllMicroservicesTools/central.log"
+                 filePattern="C:/Users/1021861/Downloads/AllMicroservicesTools/central-%d{yyyy-MM-dd}-%i.log.gz">
+      <PatternLayout pattern="%d{ISO8601} [%t] %-5level %logger{36} - %msg%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="10MB"/>
+      </Policies>
+    </RollingFile>
+    
+     <!-- Server logs -->
+    <RollingFile name="ServerFile" fileName="logs/server.log"
+                 filePattern="logs/server-%d{yyyy-MM-dd}.log.gz">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
+        <Policies>
+            <TimeBasedTriggeringPolicy/>
+        </Policies>
+    </RollingFile>
+    
+    <!-- TCP appender to Logstash -->
+    <Socket name="Logstash" host="localhost" port="5000">
+       <JsonLayout compact="true" eventEol="true"/>
+    </Socket>
+  </Appenders>
+  <Loggers>
+	<!-- Application-specific -->
+    <Logger additivity="false" level="debug" name="com.lcwd.logtest.controller">
+      <AppenderRef ref="appLog"/>
+      <AppenderRef ref="SharedFile"/>
+    </Logger>
+    
+    <!-- Framework / server logs -->
+    <Root level="info">
+		<AppenderRef ref="Console"/>
+        <AppenderRef ref="ServerFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,38 @@
+package com.lcwd.user.service.config;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.lcwd.user.service.config.interceptor.RestTemplateInterceptor;
+
+@Configuration
+public class MyConfig {
+
+	@Bean
+	@LoadBalanced
+	public RestTemplate restTemplate() {
+		RestTemplate restTemplate = new RestTemplate();
+
+        List<ClientHttpRequestInterceptor> interceptors=new ArrayList<>();
+        
+        interceptors.add(new RestTemplateInterceptor());
+
+        restTemplate.setInterceptors(interceptors);
+
+
+        return restTemplate;
+	}
+	
+	@Bean
+	@LoadBalanced
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+}

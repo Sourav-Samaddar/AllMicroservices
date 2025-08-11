@@ -1,0 +1,11 @@
+server:
+  port: 9099
+
+spring:
+  application:
+    name: BasicLogTesting
+  config:
+    import: configserver:http://localhost:8085    
+    
+logging:
+  config: classpath:log4j2.xml

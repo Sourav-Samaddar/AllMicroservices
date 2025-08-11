@@ -1,0 +1,15 @@
+2025-08-11T12:36:55,875 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Simple): Hello from non blocking simplequeue call
+2025-08-11T12:36:55,875 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 2): Hello from non blocking Fanout call
+2025-08-11T12:36:55,875 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 1): Hello from non blocking Fanout call
+2025-08-11T12:38:18,585 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 2): Hello from non blocking Fanout call
+2025-08-11T12:38:18,585 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Simple): Hello from non blocking simplequeue call
+2025-08-11T12:38:18,586 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 1): Hello from non blocking Fanout call
+2025-08-11T12:39:42,603 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 1): Hello from non blocking Fanout call
+2025-08-11T12:39:42,603 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 2): Hello from non blocking Fanout call
+2025-08-11T12:39:42,604 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Simple): Hello from non blocking simplequeue call
+2025-08-11T12:40:45,381 [http-nio-9082-exec-3] DEBUG com.lcwd.rabbitconsumer.controller.RabbitController - Rabbit Consumer 1 test
+2025-08-11T12:40:46,677 [http-nio-9082-exec-5] DEBUG com.lcwd.rabbitconsumer.controller.RabbitController - Rabbit Consumer 1 test
+2025-08-11T12:49:16,157 [http-nio-9082-exec-1] DEBUG com.lcwd.rabbitconsumer.controller.RabbitController - Rabbit Consumer 1 test
+2025-08-11T12:51:52,634 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 2): Hello from non blocking Fanout call
+2025-08-11T12:51:52,634 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Fanout Queue 1): Hello from non blocking Fanout call
+2025-08-11T12:51:52,634 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] DEBUG com.lcwd.rabbitconsumer.listener.MessageListener - Consumer 1 received (Simple): Hello from non blocking simplequeue call

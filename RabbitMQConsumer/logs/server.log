@@ -1,0 +1,82 @@
+2025-08-11 12:38:57 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-11 12:43:57 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-11 12:48:57 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-11 12:53:57 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-11 12:54:32 [RMI TCP Connection(30)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-08-11 12:54:32 [RMI TCP Connection(30)-127.0.0.1] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry - Unregistering application RABBIT-CONSUMER with eureka with status DOWN
+2025-08-11 12:54:32 [RMI TCP Connection(30)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1754897072429, current=DOWN, previous=UP]
+2025-08-11 12:54:32 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_RABBIT-CONSUMER/in1-1021861ltt.jda.corp.local:RABBIT-CONSUMER:9082: registering service...
+2025-08-11 12:54:32 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-08-11 12:54:32 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-08-11 12:54:32 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-08-11 12:54:32 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_RABBIT-CONSUMER/in1-1021861ltt.jda.corp.local:RABBIT-CONSUMER:9082 - registration status: 204
+2025-08-11 12:54:32 [RMI TCP Connection(31)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-08-11 12:54:33 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-08-11 12:54:33 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-08-11 12:54:33 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-08-11 12:54:33 [RMI TCP Connection(30)-127.0.0.1] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 12:54:33 [tomcat-shutdown] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9082"]
+2025-08-11 12:54:33 [RMI TCP Connection(32)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-08-11 12:54:33 [RMI TCP Connection(30)-127.0.0.1] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9082"]
+2025-08-11 12:54:33 [RMI TCP Connection(30)-127.0.0.1] WARN  org.apache.tomcat.util.net.Acceptor - Interrupt was received while waiting for the acceptor thread [http-nio-9082-Acceptor] to stop
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1133) ~[?:?]
+	at java.base/java.util.concurrent.CountDownLatch.await(CountDownLatch.java:276) ~[?:?]
+	at org.apache.tomcat.util.net.Acceptor.stopMillis(Acceptor.java:184) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.NioEndpoint.stopInternal(NioEndpoint.java:328) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.stop(AbstractEndpoint.java:1522) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.AbstractProtocol.stop(AbstractProtocol.java:721) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.connector.Connector.stopInternal(Connector.java:1123) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardService.removeConnector(StandardService.java:299) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.lambda$removeServiceConnectors$1(TomcatWebServer.java:173) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.doWithConnectors(TomcatWebServer.java:192) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.removeServiceConnectors(TomcatWebServer.java:170) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:358) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:120) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:463) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:618) ~[spring-context-6.2.9.jar:6.2.9]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:432) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:323) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1172) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) ~[spring-boot-3.5.4.jar:3.5.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) ~[?:?]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803) ~[?:?]
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802) ~[?:?]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472) ~[?:?]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[?:?]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[?:?]
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[?:?]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) ~[?:?]
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714) ~[?:?]
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) ~[?:?]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598) ~[?:?]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844) ~[?:?]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721) ~[?:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-08-11 12:54:33 [RMI TCP Connection(30)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-08-11 12:54:33 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown aborted with one or more requests still active

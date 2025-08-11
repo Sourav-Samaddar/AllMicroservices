@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    register-with-eureka: false  # This is a server, it doesn't register itself
+    fetch-registry: false        # It doesn't fetch registry
+  server:
+    eviction-interval-timer-in-ms: 5000 
+    
+logging:
+  level:
+    root: WARN    

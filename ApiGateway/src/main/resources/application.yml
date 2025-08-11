@@ -1,0 +1,74 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  config:
+    import: configserver:http://localhost:8085  
+    
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+          filters:
+            - name: Resilience
+              args:
+                circuitBreakerName: userCB
+                retryName: userRetry
+                rateLimiterName: userRate    
+
+        - id: HOTEL-SERVICE
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/hotels/**,/staffs/**
+          filters:
+            - name: Resilience
+              args:
+                circuitBreakerName: userCB
+                retryName: userRetry
+                rateLimiterName: userRate    
+
+        - id: RATING-SERVICE
+          uri: lb://RATING-SERVICE
+          predicates:
+            - Path=/ratings/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: ratingCB
+                fallbackUri: forward:/fallback/rating
+                
+        - id: RABBIT-PRODUCER
+          uri: lb://RABBIT-PRODUCER
+          predicates:
+            - Path=/publish/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: rabbitProduceCB
+                fallbackUri: forward:/fallback/rabbitProduce          
+
+
+        - id: RABBIT-CONSUMER
+          uri: lb://RABBIT-CONSUMER
+          predicates:
+            - Path=/rabbitConsume/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: rabbitConsumeCB
+                fallbackUri: forward:/fallback/rabbitConsume   
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka

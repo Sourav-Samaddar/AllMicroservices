@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration monitorInterval="5" status="warn">
+  <Properties>
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+    <Property name="APP_LOG_ROOT">./logs</Property>
+  </Properties>
+  <Appenders>
+    <Console follow="true" name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+    </Console>
+    <RollingFile fileName="${APP_LOG_ROOT}/appserver.log" filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log" name="appLog">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="19500KB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="1"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Logger additivity="false" level="debug" name="com.lcwd.hotel.controller.HotelController">
+      <AppenderRef ref="appLog"/>
+    </Logger>
+    <Root level="error">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
