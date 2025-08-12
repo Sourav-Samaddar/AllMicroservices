@@ -1,0 +1,16 @@
+filebeat.inputs:
+  - type: filestream
+    id: springboot-logs
+    enabled: true
+    paths:
+      - "C:/Users/1021861/Documents/Springboot_Workspace/AllMicroservices/RabbitMQConsumer/logs/appserver.log"
+    encoding: utf-8
+    ignore_older: 24h          # Don't read logs older than 1 day
+    scan_frequency: 10s        # How often to check for new lines
+    close_inactive: 5m         # Close file if no new lines for 5 min
+    clean_inactive: 72h        # Remove state after 3 days
+    start_position: end        # Only read new lines after Filebeat starts
+    prospector.scanner.exclude_files: ['\.gz$', '\.zip$']  # Ignore compressed logs
+
+output.logstash:
+  hosts: ["localhost:5044"]    # Logstash Beats input port
