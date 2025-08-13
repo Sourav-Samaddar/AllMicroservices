@@ -31,7 +31,7 @@ public class CustomLoadBalancer implements ReactorServiceInstanceLoadBalancer {
 	private final ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider;
     private final String serviceId;
     private final Random random;
-    private static final int TIMEOUT_MS = 500;
+    private static final int TIMEOUT_MS = 900;
     
     public CustomLoadBalancer(ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider, 
             String serviceId) {
@@ -117,8 +117,8 @@ public class CustomLoadBalancer implements ReactorServiceInstanceLoadBalancer {
                 URI uri = URI.create(healthUrl);
                 URL url = uri.toURL();
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setConnectTimeout(300); // Connection timeout
-                conn.setReadTimeout(300);    // Read timeout
+                conn.setConnectTimeout(500); // Connection timeout
+                conn.setReadTimeout(500);    // Read timeout
                 conn.setRequestMethod("GET");
 
                 int responseCode = conn.getResponseCode();

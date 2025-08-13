@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
     @LoadBalancerClient(name = "USER-SERVICE", configuration = CustomLoadBalancerConfiguration.class),
     @LoadBalancerClient(name = "HOTEL-SERVICE", configuration = CustomLoadBalancerConfiguration.class),
     @LoadBalancerClient(name = "RATING-SERVICE", configuration = CustomLoadBalancerConfiguration.class),
-    @LoadBalancerClient(name = "RABBIT-PRODUCER", configuration = CustomLoadBalancerConfiguration.class)
+    @LoadBalancerClient(name = "RABBIT-PRODUCER", configuration = CustomLoadBalancerConfiguration.class),
+    @LoadBalancerClient(name = "BASIC-LOG", configuration = CustomLoadBalancerConfiguration.class),
 })
 public class LoadBalancerServiceConfig {
 

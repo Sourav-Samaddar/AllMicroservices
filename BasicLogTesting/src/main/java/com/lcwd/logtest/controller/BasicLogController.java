@@ -1,6 +1,7 @@
 package com.lcwd.logtest.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,13 @@ public class BasicLogController {
 
 	@GetMapping("/test")
 	public String testLog() {
-		log.debug("Helloo *************");
-		return "This returns value 11";
+		log.debug("Helloo ******testLog*******");
+		return "This returns value testLog";
+	}
+	
+	@GetMapping("/test/{val}")
+	public String testLogWithPathVar(@PathVariable(name = "val") String val) {
+		log.debug("Helloo ******testLogWithPathVar*******:"+val);
+		return "This returns value testLogWithPathVar:"+val;
 	}
 }

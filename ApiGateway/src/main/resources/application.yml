@@ -6,7 +6,7 @@ spring:
     name: API-GATEWAY
 
   config:
-    import: configserver:http://localhost:8085  
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:8085  
     
   cloud:
     gateway:
@@ -64,6 +64,15 @@ spring:
                 name: rabbitConsumeCB
                 fallbackUri: forward:/fallback/rabbitConsume   
 
+        - id: BASIC-LOG
+          uri: lb://BASIC-LOG
+          predicates:
+            - Path=/testlog/** 
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: basicLogCB
+                fallbackUri: forward:/fallback/basiclog  
 #eureka:
 #  instance:
 #    prefer-ip-address: true

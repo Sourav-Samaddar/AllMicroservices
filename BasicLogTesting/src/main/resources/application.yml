@@ -3,9 +3,9 @@ server:
 
 spring:
   application:
-    name: BasicLogTesting
+    name: BASIC-LOG
   config:
-    import: configserver:http://localhost:8085    
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:8085    
     
 logging:
   config: classpath:log4j2.xml

@@ -34,14 +34,15 @@
                  filePattern="logs/server-%d{yyyy-MM-dd}.log.gz">
         <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
         <Policies>
-            <TimeBasedTriggeringPolicy/>
-        </Policies>
+        	<TimeBasedTriggeringPolicy />
+        	<SizeBasedTriggeringPolicy size="10MB"/>
+      	</Policies>
     </RollingFile>
     
     <!-- TCP appender to Logstash -->
-    <Socket name="Logstash" host="localhost" port="5000">
+    <!-- <Socket name="Logstash" host="localhost" port="5000">
        <JsonLayout compact="true" eventEol="true"/>
-    </Socket>
+    </Socket> -->
   </Appenders>
   <Loggers>
 	<!-- Application-specific -->

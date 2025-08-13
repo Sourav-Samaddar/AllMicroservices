@@ -38,6 +38,11 @@ public class GatewayFallbackController {
     public Mono<Void> rabbitMQConsumerFallback(ServerWebExchange exchange) {
         return writeResponse(exchange, "Rabbit MQ Consumer Service is unavailable.");
     }
+    
+    @RequestMapping("/fallback/basiclog")
+    public Mono<Void> basicLogFallback(ServerWebExchange exchange) {
+        return writeResponse(exchange, "Basic Log Service is unavailable.");
+    }
 
     private Mono<Void> writeResponse(ServerWebExchange exchange, String message) {
         exchange.getResponse().setStatusCode(HttpStatus.SERVICE_UNAVAILABLE);
