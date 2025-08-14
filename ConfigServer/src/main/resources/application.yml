@@ -10,3 +10,15 @@ spring:
         git:
           uri: https://github.com/Sourav-Samaddar/microservice-tutorial-config
           clone-on-start: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    lease-renewal-interval-in-seconds: 5      # default is 30
+    lease-expiration-duration-in-seconds: 10  # default is 90
+    registry-fetch-interval-seconds: 5        # how often client pulls registry
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}

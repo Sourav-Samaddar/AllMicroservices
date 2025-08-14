@@ -17,3 +17,7 @@
 2025-08-09T15:31:34,358 [http-nio-9099-exec-6] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo *************
 2025-08-11T12:39:25,585 [http-nio-9099-exec-1] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo *************
 2025-08-11T12:51:37,736 [http-nio-9099-exec-5] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo *************
+2025-08-13T14:27:04,032 [http-nio-9099-exec-2] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo ******testLog*******
+2025-08-13T14:27:15,755 [http-nio-9099-exec-1] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo ******testLogWithPathVar*******:sourav
+2025-08-13T14:27:28,051 [http-nio-9099-exec-5] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo ******testLogWithPathVar*******:sourav
+2025-08-13T14:27:37,831 [http-nio-9099-exec-7] DEBUG com.lcwd.logtest.controller.BasicLogController - Helloo ******testLogWithPathVar*******:sourav1

@@ -1,114 +1,51 @@
-2025-08-11 12:34:04 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - Starting BasicLogTestingApplication using Java 21.0.7 with PID 29848 (C:\Users\1021861\Documents\Springboot_Workspace\AllMicroservices\BasicLogTesting\target\classes started by 1021861 in C:\Users\1021861\Documents\Springboot_Workspace\AllMicroservices\BasicLogTesting)
-2025-08-11 12:34:04 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - No active profile set, falling back to 1 default profile: "default"
-2025-08-11 12:34:04 [main] INFO  org.springframework.cloud.config.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8085
-2025-08-11 12:34:04 [main] INFO  org.springframework.cloud.config.client.ConfigServerConfigDataLoader - Located environment: name=BasicLogTesting, profiles=[default], label=null, version=9e13b89df650bc837c3868fe482278896d3e1442, state=
-2025-08-11 12:34:06 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=0d2db3d2-8d87-30fc-986c-ddfd9285ff91
-2025-08-11 12:34:07 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9099 (http)
-2025-08-11 12:34:07 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9099"]
-2025-08-11 12:34:07 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-08-11 12:34:07 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-11 12:34:07 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-08-11 12:34:07 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3002 ms
-2025-08-11 12:34:09 [main] INFO  org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-08-11 12:34:09 [main] WARN  org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-08-11 12:34:10 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
-2025-08-11 12:34:10 [main] INFO  org.springframework.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1754895850592 with initial instances count: 6
-2025-08-11 12:34:10 [main] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry - Registering application BASICLOGTESTING with eureka with status UP
-2025-08-11 12:34:10 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1754895850611, current=UP, previous=STARTING]
-2025-08-11 12:34:10 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASICLOGTESTING/in1-1021861ltt.jda.corp.local:BasicLogTesting:9099: registering service...
-2025-08-11 12:34:10 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9099"]
-2025-08-11 12:34:10 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9099 (http) with context path '/'
-2025-08-11 12:34:10 [main] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration - Updating port to 9099
-2025-08-11 12:34:10 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASICLOGTESTING/in1-1021861ltt.jda.corp.local:BasicLogTesting:9099 - registration status: 204
-2025-08-11 12:34:10 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - Started BasicLogTestingApplication in 8.156 seconds (process running for 10.078)
-2025-08-11 12:34:11 [RMI TCP Connection(9)-127.0.0.1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-11 12:34:11 [RMI TCP Connection(9)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-08-11 12:34:11 [RMI TCP Connection(9)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-08-11 12:39:10 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-08-11 12:44:10 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-08-11 12:49:10 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-08-11 12:54:10 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry - Unregistering application BASICLOGTESTING with eureka with status DOWN
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1754897071238, current=DOWN, previous=UP]
-2025-08-11 12:54:31 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASICLOGTESTING/in1-1021861ltt.jda.corp.local:BasicLogTesting:9099: registering service...
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-11 12:54:31 [tomcat-shutdown] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9099"]
-2025-08-11 12:54:31 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASICLOGTESTING/in1-1021861ltt.jda.corp.local:BasicLogTesting:9099 - registration status: 204
-2025-08-11 12:54:31 [RMI TCP Connection(31)-127.0.0.1] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9099"]
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] WARN  org.apache.tomcat.util.net.Acceptor - Interrupt was received while waiting for the acceptor thread [http-nio-9099-Acceptor] to stop
-java.lang.InterruptedException: null
-	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1133) ~[?:?]
-	at java.base/java.util.concurrent.CountDownLatch.await(CountDownLatch.java:276) ~[?:?]
-	at org.apache.tomcat.util.net.Acceptor.stopMillis(Acceptor.java:184) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.NioEndpoint.stopInternal(NioEndpoint.java:328) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.AbstractEndpoint.stop(AbstractEndpoint.java:1522) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.AbstractProtocol.stop(AbstractProtocol.java:721) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.connector.Connector.stopInternal(Connector.java:1123) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardService.removeConnector(StandardService.java:299) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.lambda$removeServiceConnectors$1(TomcatWebServer.java:173) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.doWithConnectors(TomcatWebServer.java:192) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.removeServiceConnectors(TomcatWebServer.java:170) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:358) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:120) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:463) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:618) ~[spring-context-6.2.9.jar:6.2.9]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
-	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:432) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:323) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1172) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown(SpringApplicationAdminMXBeanRegistrar.java:160) ~[spring-boot-3.5.4.jar:3.5.4]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:64) ~[?:?]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at java.base/sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:97) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:193) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.ConvertingMethod.invokeWithOpenReturn(ConvertingMethod.java:175) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:115) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.MXBeanIntrospector.invokeM2(MXBeanIntrospector.java:52) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.MBeanIntrospector.invokeM(MBeanIntrospector.java:236) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.PerInterface.invoke(PerInterface.java:138) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.MBeanSupport.invoke(MBeanSupport.java:252) ~[?:?]
-	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803) ~[?:?]
-	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802) ~[?:?]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472) ~[?:?]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310) ~[?:?]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405) ~[?:?]
-	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829) ~[?:?]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
-	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360) ~[?:?]
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) ~[?:?]
-	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) ~[?:?]
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714) ~[?:?]
-	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) ~[?:?]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598) ~[?:?]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844) ~[?:?]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721) ~[?:?]
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720) ~[?:?]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
-	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
-2025-08-11 12:54:31 [RMI TCP Connection(29)-127.0.0.1] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-08-11 12:54:31 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown aborted with one or more requests still active
+2025-08-13 14:23:23 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - Starting BasicLogTestingApplication using Java 21.0.8 with PID 2024 (/Users/souravsamaddar/Documents/Spring-Projects/AllMicroservices/BasicLogTesting/target/classes started by souravsamaddar in /Users/souravsamaddar/Documents/Spring-Projects/AllMicroservices/BasicLogTesting)
+2025-08-13 14:23:23 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-13 14:23:23 [main] INFO  org.springframework.cloud.config.client.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8085
+2025-08-13 14:23:23 [main] INFO  org.springframework.cloud.config.client.ConfigServerConfigDataLoader - Located environment: name=BASIC-LOG, profiles=[default], label=null, version=ec603e51e85ad8412476a82346bef97f341c5908, state=
+2025-08-13 14:23:24 [main] INFO  org.springframework.cloud.context.scope.GenericScope - BeanFactory id=9ad817e4-788b-32e0-b36f-1abeae68bf19
+2025-08-13 14:23:24 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9099 (http)
+2025-08-13 14:23:24 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9099"]
+2025-08-13 14:23:24 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-13 14:23:24 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13 14:23:24 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-13 14:23:24 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 905 ms
+2025-08-13 14:23:25 [main] INFO  org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-08-13 14:23:25 [main] WARN  org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-08-13 14:23:25 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-08-13 14:23:25 [main] INFO  org.springframework.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1755075205774 with initial instances count: 2
+2025-08-13 14:23:25 [main] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry - Registering application BASIC-LOG with eureka with status UP
+2025-08-13 14:23:25 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1755075205785, current=UP, previous=STARTING]
+2025-08-13 14:23:25 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASIC-LOG/192.168.29.35:BASIC-LOG:9099: registering service...
+2025-08-13 14:23:25 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9099"]
+2025-08-13 14:23:25 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9099 (http) with context path '/'
+2025-08-13 14:23:25 [main] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration - Updating port to 9099
+2025-08-13 14:23:25 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASIC-LOG/192.168.29.35:BASIC-LOG:9099 - registration status: 204
+2025-08-13 14:23:25 [main] INFO  com.lcwd.logtest.BasicLogTestingApplication - Started BasicLogTestingApplication in 3.216 seconds (process running for 8.797)
+2025-08-13 14:27:04 [http-nio-9099-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-13 14:27:04 [http-nio-9099-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-13 14:27:04 [http-nio-9099-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-13 14:28:25 [AsyncResolver-bootstrap-executor-%d] INFO  com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-08-13 14:30:45 [SpringApplicationShutdownHook] INFO  org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry - Unregistering application BASIC-LOG with eureka with status DOWN
+2025-08-13 14:30:45 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1755075645646, current=DOWN, previous=UP]
+2025-08-13 14:30:45 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASIC-LOG/192.168.29.35:BASIC-LOG:9099: registering service...
+2025-08-13 14:30:45 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13 14:30:45 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-13 14:30:45 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASIC-LOG/192.168.29.35:BASIC-LOG:9099 - registration status: 204
+2025-08-13 14:30:45 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-08-13 14:30:48 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-08-13 14:30:48 [DiscoveryClient-%d] WARN  com.netflix.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
+2025-08-13 14:30:48 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_BASIC-LOG/192.168.29.35:BASIC-LOG:9099 - deregister  status: 200
+2025-08-13 14:30:48 [SpringApplicationShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

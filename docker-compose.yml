@@ -1,0 +1,79 @@
+version: "3.9"
+name: MicroserviceContainer
+services:
+  serviceregistry:
+    image: souravsamaddar007/serviceregistry:1.0.0
+    container_name: serviceregistry
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  configserver:
+    image: souravsamaddar007/configserver:latest
+    container_name: configserver
+    ports:
+      - "8085:8085"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+    depends_on:
+      serviceregistry:
+        condition: service_healthy
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8085/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  gatewayserver:
+    image: souravsamaddar007/gatewayserver:latest
+    container_name: gatewayserver
+    ports:
+      - "8084:8084"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      configserver:
+        condition: service_healthy
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8084/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  basiclogserver:
+    image: souravsamaddar007/basiclogserver:latest
+    container_name: basiclogserver
+#    ports:
+#      - "9099:9099"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      configserver:
+        condition: service_healthy
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9099/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+networks:
+  app-network:
+    driver: bridge

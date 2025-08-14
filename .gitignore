@@ -1,1 +1,11 @@
 .metadata/
+# Ignore macOS system files
+.DS_Store
+
+# Ignore IntelliJ IDEA settings
+.idea/
+
+# Ignore logs and temp files
+logs/
+*.log
+*.log.gz
