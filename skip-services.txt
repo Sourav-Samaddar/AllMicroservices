@@ -1,3 +1,5 @@
-ApiGateway
-ConfigServer
 RatingService
+RabbitMQProducer
+RabbitMQConsumer
+RabbitMQConsumer-2
+HotelService
