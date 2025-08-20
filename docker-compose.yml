@@ -91,6 +91,24 @@ services:
       retries: 5
       start_period: 20s
 
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: microservicedb
+    ports:
+      - "3308:5432"
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d microservicedb" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
   userservice:
     image: souravsamaddar007/userservice:latest
     container_name: userservice
@@ -111,6 +129,31 @@ services:
       - app-network
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8081/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  hotelservice:
+    image: souravsamaddar007/hotelservice:latest
+    container_name: hotelservice
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_ADDRESS=http://configserver:8085
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/microservicedb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      postgres:
+        condition: service_healthy
+      configserver:
+        condition: service_healthy
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 5
