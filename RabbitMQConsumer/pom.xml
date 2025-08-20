@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.lcwd.rabbitconsumer</groupId>
 	<artifactId>RabbitMQConsumer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>RabbitMQConsumer</name>
 	<description>This project is to implement RabbitMQ Consumer</description>
 	<url/>
@@ -122,6 +122,32 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<!-- Equivalent to "FROM eclipse-temurin:21-jdk as base" -->
+					<from>
+						<image>eclipse-temurin:21-jdk</image>
+						<platforms>
+							<!-- Intel/AMD machines -->
+							<platform>
+								<architecture>amd64</architecture>
+								<os>linux</os>
+							</platform>
+							<!-- Apple Silicon (M1/M2) -->
+							<platform>
+								<architecture>arm64</architecture>
+								<os>linux</os>
+							</platform>
+						</platforms>
+					</from>
+					<to>
+						<image>registry.hub.docker.com/souravsamaddar007/rabbitmqconsumer:latest</image>
+						<tags>${project.version}</tags>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

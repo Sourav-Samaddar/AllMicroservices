@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.lcwd.rating</groupId>
 	<artifactId>RatingService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>RatingService</name>
 	<description>This is rating service to store related information</description>
 	<url/>
@@ -127,6 +127,33 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<!-- Equivalent to "FROM eclipse-temurin:21-jdk as base" -->
+					<from>
+						<image>eclipse-temurin:21-jdk</image>
+						<platforms>
+							<!-- Intel/AMD machines -->
+							<platform>
+								<architecture>amd64</architecture>
+								<os>linux</os>
+							</platform>
+							<!-- Apple Silicon (M1/M2) -->
+							<platform>
+								<architecture>arm64</architecture>
+								<os>linux</os>
+							</platform>
+						</platforms>
+					</from>
+					<to>
+						<image>registry.hub.docker.com/souravsamaddar007/ratingservice:latest</image>
+						<tags>${project.version}</tags>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

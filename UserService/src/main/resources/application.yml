@@ -23,7 +23,7 @@ spring:
         format_sql: true
         
   config:
-    import: configserver:http://localhost:8085     
+    import: configserver:${CONFIG_SERVER_ADDRESS:http://localhost:8085}
     
 #eureka:
 #  client:

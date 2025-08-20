@@ -17,23 +17,26 @@
       </Policies>
       <DefaultRolloverStrategy max="1"/>
     </RollingFile>
-        
+       
     <!-- Server logs -->
     <RollingFile name="ServerFile" fileName="logs/server.log"
                  filePattern="logs/server-%d{yyyy-MM-dd}.log.gz">
         <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
         <Policies>
-            <SizeBasedTriggeringPolicy size="10MB"/>
-        </Policies>
-        <DefaultRolloverStrategy max="1"/>
+        	<SizeBasedTriggeringPolicy size="10MB"/>
+      	</Policies>
+      	<DefaultRolloverStrategy max="1"/>
     </RollingFile>
     
+    <!-- TCP appender to Logstash -->
+    <!-- <Socket name="Logstash" host="localhost" port="5000">
+       <JsonLayout compact="true" eventEol="true"/>
+    </Socket> -->
   </Appenders>
   <Loggers>
 	<!-- Application-specific -->
-    <Logger additivity="false" level="debug" name="com.lcwd.rabbitconsumer">
+    <Logger additivity="false" level="debug" name="com.lcwd.gateway.controler">
       <AppenderRef ref="appLog"/>
-      <!-- <AppenderRef ref="SharedFile"/> -->
     </Logger>
     
     <!-- Framework / server logs -->
