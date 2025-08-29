@@ -113,15 +113,17 @@ services:
     image: mongo:6.0
     container_name: mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: appuser
-      MONGO_INITDB_ROOT_PASSWORD: app123
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root123
       MONGO_INITDB_DATABASE: microservicesdb
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     ports:
       - "27017:27017"
     networks:
       - app-network
     healthcheck:
-      test: [ "CMD", "mongo", "--username", "appuser", "--password", "app123", "--authenticationDatabase", "microservicesdb", "--eval", "db.adminCommand('ping')" ]
+      test: ["CMD-SHELL", "mongosh --username root --password root123 --authenticationDatabase admin --eval 'db.adminCommand(\"ping\")' --quiet"]
       interval: 10s
       timeout: 5s
       retries: 5
