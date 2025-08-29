@@ -1,5 +1,9 @@
-RatingService
+ServiceRegistry
+ConfigServer
+BasicLogTesting
+ApiGateway
+UserService
+HotelService
 RabbitMQProducer
 RabbitMQConsumer
 RabbitMQConsumer-2
-HotelService

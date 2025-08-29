@@ -62,7 +62,7 @@ if "%MODE%"=="sequential" (
 				) || (
 					echo Starting build for %%D ...
 					REM Run each build in background, redirect logs
-					start /b cmd /c "(cd /d %%D && mvn clean install -DskipTests) > %%D\build.log 2>&1 && echo Build for %%D finished. || echo Build for %%D FAILED."
+					start /b cmd /c "(cd /d %%D && mvn clean install -DskipTests jib:build) > %%D\build.log 2>&1 && echo Build for %%D finished. || echo Build for %%D FAILED."
 				)
                 
             ) else (

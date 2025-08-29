@@ -109,6 +109,24 @@ services:
       retries: 5
       start_period: 20s
 
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: appuser
+      MONGO_INITDB_ROOT_PASSWORD: app123
+      MONGO_INITDB_DATABASE: microservicesdb
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "mongo", "--username", "appuser", "--password", "app123", "--authenticationDatabase", "microservicesdb", "--eval", "db.adminCommand('ping')" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
   userservice:
     image: souravsamaddar007/userservice:latest
     container_name: userservice
@@ -154,6 +172,29 @@ services:
       - app-network
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  ratingservice:
+    image: souravsamaddar007/ratingservice:latest
+    container_name: ratingservice
+    ports:
+      - "8083:8083"
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_ADDRESS=http://configserver:8085
+      - SPRING_DATA_MONGODB_URI=mongodb://appuser:app123@mongodb:27017/microservicesdb?authSource=microservicesdb
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      configserver:
+        condition: service_healthy
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8083/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 5
