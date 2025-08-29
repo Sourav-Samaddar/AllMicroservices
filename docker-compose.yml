@@ -274,8 +274,8 @@ services:
   rabbitmqconsumer2:
     image: souravsamaddar007/rabbitmqconsumer2:latest
     container_name: rabbitmqconsumer2
-    ports:
-      - "9082:9082"
+#    ports:
+#      - "9082:9082"
     environment:
       - CONFIG_SERVER_ADDRESS=http://configserver:8085
       - SPRING_RABBITMQ_HOST=rabbitmq
