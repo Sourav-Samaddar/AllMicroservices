@@ -252,6 +252,7 @@ services:
     ports:
       - "9082:9082"
     environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
       - CONFIG_SERVER_ADDRESS=http://configserver:8085
       - SPRING_RABBITMQ_HOST=rabbitmq
       - SPRING_RABBITMQ_PORT=5672
@@ -277,6 +278,7 @@ services:
     ports:
       - "9083:9083"
     environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
       - CONFIG_SERVER_ADDRESS=http://configserver:8085
       - SPRING_RABBITMQ_HOST=rabbitmq
       - SPRING_RABBITMQ_PORT=5672
