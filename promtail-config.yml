@@ -64,3 +64,11 @@ scrape_configs:
         labels:
           job: rabbitmqconsumer2
           __path__: /logs/rabbitmqconsumer2/appserver.log
+
+  - job_name: basiclogserver-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: basiclogserver
+          __path__: /logs/basiclogserver/appserver.log

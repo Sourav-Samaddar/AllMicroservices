@@ -68,6 +68,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - basiclogserver_logs:/logs
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9099/actuator/health"]
       interval: 10s
@@ -350,6 +352,7 @@ services:
       - rabbitmqproducer_logs:/logs/rabbitmqproducer:ro
       - rabbitmqconsumer_logs:/logs/rabbitmqconsumer:ro
       - rabbitmqconsumer2_logs:/logs/rabbitmqconsumer2:ro
+      - basiclogserver_logs:/logs/basiclogserver:ro
       - ./promtail-config.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:
@@ -372,3 +375,4 @@ volumes:
   rabbitmqproducer_logs:
   rabbitmqconsumer_logs:
   rabbitmqconsumer2_logs:
+  basiclogserver_logs:
