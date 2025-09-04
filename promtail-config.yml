@@ -15,4 +15,52 @@ scrape_configs:
           - localhost
         labels:
           job: userservice
-          __path__: /logs/*.log
+          __path__: /logs/userservice/appserver.log
+
+  - job_name: hotelservice-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: hotelservice
+          __path__: /logs/hotelservice/appserver.log
+
+  - job_name: ratingservice-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: ratingservice
+          __path__: /logs/ratingservice/appserver.log
+
+  - job_name: gatewayserver-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: gatewayserver
+          __path__: /logs/gatewayserver/appserver.log
+
+  - job_name: rabbitmqproducer-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: rabbitmqproducer
+          __path__: /logs/rabbitmqproducer/appserver.log
+
+  - job_name: rabbitmqconsumer-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: rabbitmqconsumer
+          __path__: /logs/rabbitmqconsumer/appserver.log
+
+  - job_name: rabbitmqconsumer2-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: rabbitmqconsumer2
+          __path__: /logs/rabbitmqconsumer2/appserver.log

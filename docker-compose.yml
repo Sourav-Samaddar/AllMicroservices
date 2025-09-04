@@ -46,6 +46,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - gatewayserver_logs:/logs
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8084/actuator/health"]
       interval: 10s
@@ -179,6 +181,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - hotelservice_logs:/logs
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
       interval: 10s
@@ -202,6 +206,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - ratingservice_logs:/logs
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8083/actuator/health" ]
       interval: 10s
@@ -248,6 +254,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - rabbitmqproducer_logs:/logs
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9081/actuator/health" ]
       interval: 10s
@@ -274,6 +282,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - rabbitmqconsumer_logs:/logs
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9082/actuator/health" ]
       interval: 10s
@@ -300,6 +310,8 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    volumes:
+      - rabbitmqconsumer2_logs:/logs
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9082/actuator/health" ]
       interval: 10s
@@ -331,7 +343,13 @@ services:
   promtail:
     image: grafana/promtail:2.9.0
     volumes:
-      - userservice_logs:/logs:ro
+      - userservice_logs:/logs/userservice:ro
+      - hotelservice_logs:/logs/hotelservice:ro
+      - ratingservice_logs:/logs/ratingservice:ro
+      - gatewayserver_logs:/logs/gatewayserver:ro
+      - rabbitmqproducer_logs:/logs/rabbitmqproducer:ro
+      - rabbitmqconsumer_logs:/logs/rabbitmqconsumer:ro
+      - rabbitmqconsumer2_logs:/logs/rabbitmqconsumer2:ro
       - ./promtail-config.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:
@@ -348,3 +366,9 @@ volumes:
   mongodb_config:
   rabbitmq_data:
   userservice_logs:
+  hotelservice_logs:
+  ratingservice_logs:
+  gatewayserver_logs:
+  rabbitmqproducer_logs:
+  rabbitmqconsumer_logs:
+  rabbitmqconsumer2_logs:
