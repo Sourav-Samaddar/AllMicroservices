@@ -20,7 +20,7 @@ public class BasicLogController {
 	
 	@GetMapping("/test/{val}")
 	public String testLogWithPathVar(@PathVariable(name = "val") String val) {
-		log.debug("Helloo ******testLogWithPathVar*******:"+val);
-		return "This returns value testLogWithPathVar:"+val;
+		log.debug("Helloo ******testLogWithPathVar updated*******:"+val);
+		return "This returns value testLogWithPathVar test:"+val;
 	}
 }
