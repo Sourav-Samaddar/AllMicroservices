@@ -1,9 +1,10 @@
 ServiceRegistry
 ConfigServer
-BasicLogTesting
 ApiGateway
 UserService
 HotelService
+RatingService
 RabbitMQProducer
 RabbitMQConsumer
 RabbitMQConsumer-2
+BasicLogTesting2
